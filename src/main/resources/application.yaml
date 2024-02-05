@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/reservation?serverTimezone=GMT%2b8
+    username: root
+    password: root
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 1 #每次只能获取一条消息，处理完成在获取下一个
